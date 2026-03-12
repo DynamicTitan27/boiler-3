@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login-container" style="border: 2px solid black; padding: 20px; width: 300px; margin: 0 auto; text-align: center;">
+    <h2 style="margin-top: 0;">Library Login</h2>
+    <div style="margin-bottom: 15px; text-align: left;">
+      <label><b>Username:</b></label><br>
+      <input type="text" id="username" placeholder="admin/student" style="width: 100%; box-sizing: border-box;">
+    </div>
+    <div style="margin-bottom: 15px; text-align: left;">
+      <label><b>Password:</b></label><br>
+      <input type="password" id="password" placeholder="123" style="width: 100%; box-sizing: border-box;">
+    </div>
+    <div style="display: flex; gap: 10px; margin-top: 10px;">
+      <button onclick="login()" style="flex: 1; padding: 8px;">Login</button>
+      <button onclick="signup()" style="flex: 1; padding: 8px;">Sign Up</button>
+    </div>
+  </div>
+  
+  <div id="dashboard-container" class="hidden">
+    <nav>
+      <h2>Smart Library</h2>
+      <div>
+        <span id="user-display"></span>
+        <button onclick="logout()">Logout</button>
+      </div>
+    </nav>
+    <div class="grid">
+      <div id="librarian-panel" class="card hidden">
+        <h3>Add New Book</h3>
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="author" placeholder="Author">
+        <input type="text" id="isbn" placeholder="ISBN">
+        <input type="number" id="copies" placeholder="Total Copies">
+        <button onclick="addBook()">Add Book</button>
+      </div>
+      
+      <div class="card col">
+        <h3>Book Catalog</h3>
+        <div id="catalog" class="list"></div>
+      </div>
+      
+      <div id="issues-panel" class="card col hidden">
+        <h3>Issue Records</h3>
+        <div id="issues" class="list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
